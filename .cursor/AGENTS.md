@@ -127,6 +127,23 @@ If the information is not in CONTEXT.json or the index files, use grep against x
 
 **Key principle**: CONTEXT.json provides scoped reference data; snippet_examples provides output structure; index files are the secondary lookup; xml_parsed is the last resort.
 
+# Custom functions
+
+FileMaker solutions may contain custom functions. These are referenced by name in calculations (CDATA text) and do **not** require IDs in fmxmlsnippet output. However, the AI must know which custom functions exist so it uses them rather than inventing alternatives.
+
+Custom functions fall into three categories:
+
+1. **Constants** -- return a fixed value (e.g. `CardWindowHeight` returns `600`). Use these wherever the solution expects a standardized value. Do NOT substitute a literal number; always use the custom function name so the value stays centralized.
+2. **Functional code** -- general-purpose utility logic with no field references (e.g. `FormatPhone ( phoneNumber )`). These are safe to call from any context.
+3. **Solution-specific code** -- contain references to fields or table occurrences and will only evaluate correctly when the current layout provides the proper context for those references. Before using one of these in a script, verify that the script will be running on (or will have navigated to) a layout whose base table occurrence supports the fields the custom function references.
+
+When CONTEXT.json includes a `custom_functions` section, prefer it for discovering available functions. If not present, custom function names and definitions can be found in:
+
+- `xml_parsed/custom_functions/` -- full calculation text (the `.txt` files)
+- `xml_parsed/custom_function_stubs/` -- XML stubs with name and ID
+
+When a script step uses a calculation that should reference a custom function (e.g. card window dimensions, formatting helpers), check these sources to confirm the function name before writing the calculation.
+
 # Token efficiency
 
 The context system is designed to minimize token consumption. Follow these rules:
