@@ -2,5 +2,19 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Re-Login">
     <NoInteract state="True"/>
+    <AccountName>
+      <Calculation><![CDATA["account name"]]></Calculation>
+    </AccountName>
+    <Password>
+      <Calculation><![CDATA["password"]]></Calculation>
+    </Password>
   </Step>
 </fmxmlsnippet>
+<!-- NoInteract state: "True" suppresses dialog and uses the literal/calculated account and password. "False" shows the Open dialog for manual entry. -->
+<!-- Required: AccountName, Password (when NoInteract is "True"). -->
+<!-- Specifying AccountName and Password works only with FileMaker file accounts and external server accounts that do not use AD FS. -->
+<!-- Privileges for the new account take effect immediately (tables, records, layouts, scripts, value lists). -->
+<!-- Does not require Full Access; any user can re-login. -->
+<!-- Without Set Error Capture: users get 5 attempts. With Set Error Capture on: users get 1 attempt. -->
+<!-- Server-side scripts, Data API, and CWP always run as if NoInteract is "True". Not supported on FileMaker Cloud (error 3). -->
+<!-- See https://help.claris.com/en/pro-help/content/re-login.html -->

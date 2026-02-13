@@ -1,4 +1,14 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
-  <Step enable="True" id="0" name="Delete Account"/>
+  <Step enable="True" id="0" name="Delete Account">
+    <AccountName>
+      <Calculation><![CDATA["account name"]]></Calculation>
+    </AccountName>
+  </Step>
 </fmxmlsnippet>
+<!-- Required: AccountName (account name or group name to delete). -->
+<!-- Works with FileMaker file, external server, Apple Account, and OAuth accounts. Claris ID and external IdP accounts are not supported. -->
+<!-- Cannot delete an account that has Full Access privileges. -->
+<!-- Requires the Full Access privilege set to run (or Grant Full Access Privileges on the script). -->
+<!-- No dialog is displayed; the account is deleted immediately. -->
+<!-- See https://help.claris.com/en/pro-help/content/delete-account.html -->

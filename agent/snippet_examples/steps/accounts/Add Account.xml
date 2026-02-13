@@ -1,9 +1,26 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Add Account">
-    <ChgPwdOnNextLogin value="False"/>
+    <ChgPwdOnNextLogin value="True"/>
+    <AccountName>
+      <Calculation><![CDATA["Account Name"]]></Calculation>
+    </AccountName>
+    <Password>
+      <Calculation><![CDATA["Password"]]></Calculation>
+    </Password>
+    <PrivilegeSet id="0" name=""/>
     <AddAccount>
       <AccountType>FileMaker</AccountType>
     </AddAccount>
   </Step>
 </fmxmlsnippet>
+<!-- AccountType: "FileMaker" | "ExternalServer" | "AppleID" | "Amazon" | "Google" | "MicrosoftEntraID" | "CustomOAuth" -->
+<!-- ChgPwdOnNextLogin value: "True" forces password change on next login. "False" does not. FileMaker type only. -->
+<!-- Required: AccountType, PrivilegeSet. -->
+<!-- For FileMaker: AccountName, Password. For ExternalServer/MicrosoftEntraID/CustomOAuth groups: GroupName (instead of AccountName). For AppleID/Amazon/Google: AccountName (user's email). -->
+<!-- Optional: ChgPwdOnNextLogin (FileMaker type only). -->
+<!-- The Full Access privilege set cannot be assigned via this script step. -->
+<!-- Each AccountName and GroupName must be unique across both types in the current file. -->
+<!-- Requires the Full Access privilege set to run (or Grant Full Access Privileges on the script). -->
+<!-- Does not support Claris ID or external IdP accounts. -->
+<!-- See https://help.claris.com/en/pro-help/content/add-account.html -->

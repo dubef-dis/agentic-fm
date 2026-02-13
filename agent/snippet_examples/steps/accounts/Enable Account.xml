@@ -2,5 +2,14 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Enable Account">
     <AccountOperation value="Activate"/>
+    <AccountName>
+      <Calculation><![CDATA["account name"]]></Calculation>
+    </AccountName>
   </Step>
 </fmxmlsnippet>
+<!-- AccountOperation value: "Activate" | "Deactivate" -->
+<!-- Required: AccountName, AccountOperation. -->
+<!-- Works with FileMaker file, external server, Apple Account, and OAuth accounts. Claris ID and external IdP accounts are not supported. -->
+<!-- Cannot deactivate an account that has Full Access privileges. -->
+<!-- Requires the Full Access privilege set to run (or Grant Full Access Privileges on the script). -->
+<!-- See https://help.claris.com/en/pro-help/content/enable-account.html -->
