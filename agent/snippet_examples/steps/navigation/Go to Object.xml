@@ -1,4 +1,13 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
-  <Step enable="True" id="0" name="Go to Object"/>
+  <Step enable="True" id="0" name="Go to Object">
+    <ObjectName>
+      <Calculation><![CDATA[]]></Calculation>
+    </ObjectName>
+    <Repetition>
+      <Calculation><![CDATA[1]]></Calculation>
+    </Repetition>
+  </Step>
 </fmxmlsnippet>
+<!-- Optional: Repetition. -->
+<!-- See https://help.claris.com/en/pro-help/content/go-to-object.html -->

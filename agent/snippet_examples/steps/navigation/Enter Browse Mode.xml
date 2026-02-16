@@ -4,3 +4,5 @@
     <Pause state="False"/>
   </Step>
 </fmxmlsnippet>
+<!-- Pause state: "True" pauses the script for user input. "False" does not pause. -->
+<!-- See https://help.claris.com/en/pro-help/content/enter-browse-mode.html -->

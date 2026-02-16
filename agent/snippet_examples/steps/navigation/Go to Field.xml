@@ -1,6 +1,15 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Go to Field">
-    <SelectAll state="False"/>
+    <SelectAll state="True"/>
+    <Field table="" id="0" name=""/>
   </Step>
 </fmxmlsnippet>
+<!-- SelectAll state: "True" selects all contents of field (opens document ready for editing). "False" does not select contents. -->
+<!-- Required: Field (target field to move to). -->
+<!-- Moves to the specified field on current layout. -->
+<!-- If field is on tab panel or slide panel that is not frontmost, specified field is selected and panel moves to front. However, if same field appears elsewhere on layout and script finds that field first, panel with that field will not come forward. To force specific field, assign object name and use Go to Object script step (can also specify repetition for repeating field). -->
+<!-- When layout contains multiple instances of field, first visible instance (based on creation order) will have focus. To specify particular instance, use Go to Object script step. -->
+<!-- If field is on popover, the popover opens. -->
+<!-- In WebDirect: cursor moves to specified field; if target field not visible in browser window, Go to Field does not scroll window to make field visible. -->
+<!-- See https://help.claris.com/en/pro-help/content/go-to-field.html -->

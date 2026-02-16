@@ -1,8 +1,22 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Go to Portal Row">
-    <NoInteract state="False"/>
+    <NoInteract state="True"/>
     <SelectAll state="False"/>
-    <RowPageLocation value="First"/>
+    <RowPageLocation value="ByCalculation"/>
+    <Calculation><![CDATA[]]></Calculation>
   </Step>
 </fmxmlsnippet>
+<!-- RowPageLocation enumeration: "First" moves to first row in portal; "Last" moves to last row; "Previous" moves to previous row; "Next" moves to next row; "ExitAfterLast" exits script when reaches last portal row (use with Next or Previous; useful within loop to exit after last row); "ByCalculation" moves to row number that is result of calculation (or row number confirmed in dialog if NoInteract is False). -->
+<!-- NoInteract state: "True" suppresses dialog (uses calculation result directly). "False" shows dialog for user to confirm row number. -->
+<!-- SelectAll state: "True" selects entire portal row. "False" only one field in portal is active. -->
+<!-- Optional: RowPageLocation (defaults to specific navigation method), Calculation (for ByCalculation option), SelectAll, NoInteract. -->
+<!-- Navigates among rows in active portal. When no portal is active, uses first portal in layout stacking order. -->
+<!-- Tries to keep same field selected when changing rows. If no field in portal is selected, selects first field it can enter. -->
+<!-- Example: if third field in second portal row is selected, Go to Portal Row [Next] goes to third field in third portal row. -->
+<!-- In portal displaying records from current table: has same result as Go to Record/Request/Page. -->
+<!-- In WebDirect: cursor moves next to specified row but row is not selected. -->
+<!-- Server-side scripts, Data API, and CWP: do not support ByCalculation option. -->
+<!-- When performed on server: commits current record. -->
+<!-- Partial support on WebDirect (row not selected), Server (no ByCalculation, commits record), Cloud (no ByCalculation, commits record), Data API (no ByCalculation), and CWP (no ByCalculation). -->
+<!-- See https://help.claris.com/en/pro-help/content/go-to-portal-row.html -->

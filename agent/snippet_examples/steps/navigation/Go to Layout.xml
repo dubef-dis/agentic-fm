@@ -1,6 +1,20 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Go to Layout">
-    <LayoutDestination value="OriginalLayout"/>
+    <LayoutDestination value="SelectedLayout"/>
+    <Layout id="0" name=""/>
+    <Animation value=""/>
   </Step>
 </fmxmlsnippet>
+<!-- LayoutDestination enumeration: "SelectedLayout" specifies layout by name from list; "OriginalLayout" uses active layout when script initiated; "LayoutNameByCalculation" specifies formula whose result is valid layout name; "LayoutNumberByCalculation" specifies formula whose result is valid layout number (layout numbers correspond to order of layouts in file). -->
+<!-- Animation value: specifies animation for switching to new layout (FileMaker Go only). -->
+<!-- Required: LayoutDestination. -->
+<!-- Optional: Layout (for SelectedLayout; layout id and name), Animation (FileMaker Go only). -->
+<!-- Switches to the specified layout. Useful to ensure user starts with correct layout displayed when script begins. -->
+<!-- Can only go to layouts defined in same file as script. To go to layouts in external file, define script in that file using Go to Layout and call from first file using Perform Script. -->
+<!-- Layout Name by calculation recognizes layouts with same names in order they were created. If multiple layouts have same name, select specific layout from list or use Layout Number by calculation. -->
+<!-- To verify layout numbers: define unstored calculation field with Get(LayoutNumber) function and place on layouts. -->
+<!-- When file has two or more tables, FileMaker Pro appends source table name to layout name for clarity (e.g., "Layout #2" (TableB)). -->
+<!-- Cannot use animations for switching layouts via Go to Layout menu item or status toolbar buttons. -->
+<!-- Partial support on Pro (no animation), WebDirect (no animation), Server, Cloud, Data API, and CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/go-to-layout.html -->

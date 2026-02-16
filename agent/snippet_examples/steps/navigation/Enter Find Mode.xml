@@ -2,6 +2,24 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Enter Find Mode">
     <Pause state="True"/>
-    <Restore state="False"/>
+    <Restore state="True"/>
+    <Query>
+      <RequestRow operation="Include">
+        <Criteria>
+          <Field table="" id="0" name=""/>
+          <Text>$query</Text>
+        </Criteria>
+      </RequestRow>
+    </Query>
   </Step>
 </fmxmlsnippet>
+<!-- Pause state: "True" pauses the script to allow users to enter a find request. "False" does not pause. -->
+<!-- Restore state: "True" uses stored/specified find requests. "False" does not restore stored find requests. -->
+<!-- RequestRow operation attribute: "Include" finds records matching criteria (Find Records action); "Omit" omits records matching criteria (Omit Records action). -->
+<!-- Optional: Pause, Query (with RequestRow elements containing Criteria; can define multiple find requests to find and omit records from single script step). -->
+<!-- Switches to Find mode. -->
+<!-- When Restore is enabled, FileMaker Pro displays current find request(s) if any. Additional find requests can be defined, and existing requests can be duplicated, edited, or deleted. -->
+<!-- Single find request can either find records or omit records, but cannot perform both actions at same time. Use multiple find requests to find and omit from single script step. -->
+<!-- For each field in request, specify criteria for FileMaker Pro to search. -->
+<!-- Partial support on Server, Cloud, Data API, and CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/enter-find-mode.html -->
