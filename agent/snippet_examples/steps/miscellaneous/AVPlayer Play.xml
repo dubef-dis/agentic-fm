@@ -1,6 +1,31 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="AVPlayer Play">
-    <Source value="Object"/>
+    <Source value="Object">
+      <Calculation><![CDATA[$object]]></Calculation>
+    </Source>
+    <Repetition>
+      <Calculation><![CDATA[1]]></Calculation>
+    </Repetition>
+    <Presentation value="Start Full Screen"/>
+    <PlaybackPosition>
+      <Calculation><![CDATA[0]]></Calculation>
+    </PlaybackPosition>
+    <StartOffset>
+      <Calculation><![CDATA[0]]></Calculation>
+    </StartOffset>
+    <EndOffset>
+      <Calculation><![CDATA[0]]></Calculation>
+    </EndOffset>
+    <HideControls value="False"/>
+    <DisableInteraction value="False"/>
   </Step>
 </fmxmlsnippet>
+<!-- Source value: "Object" (layout object) | "Field" (container field) | "URL" (URL to media). If no source specified, uses the active layout object. -->
+<!-- Presentation value: "Start Full Screen" (starts full screen, allows switching to embedded) | "Full Screen Only" | "Start Embedded" (starts embedded, allows switching to full screen) | "Embedded Only" | "Audio Only" (audio only). For Field or URL sources, only "Full Screen Only" and "Audio Only" are available. -->
+<!-- HideControls value: "True" hides playback controls. "False" shows playback controls. If controls are hidden but interaction is enabled, gestures can be used. -->
+<!-- DisableInteraction value: "True" disables user interaction with playback (no controls or gestures). "False" enables user interaction. -->
+<!-- Optional: Source (layout object/field/URL; defaults to active layout object), Repetition (for repeating fields), Presentation, PlaybackPosition (seconds from beginning to start playback), StartOffset (beginning of playback range in seconds, default 0), EndOffset (end of playback range in seconds, default 0 = play to end), HideControls, DisableInteraction. -->
+<!-- FileMaker Go only; not supported on Pro, WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- Media continues playing if the foreground window moves to the back. -->
+<!-- See https://help.claris.com/en/pro-help/content/avplayer-play.html -->

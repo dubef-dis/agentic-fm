@@ -1,4 +1,15 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
-  <Step enable="True" id="0" name="Refresh Portal"/>
+  <Step enable="True" id="0" name="Refresh Portal">
+    <ObjectName>
+      <Calculation><![CDATA[]]></Calculation>
+    </ObjectName>
+  </Step>
 </fmxmlsnippet>
+<!-- Optional: ObjectName (named object on current layout; if omitted, uses active layout object). -->
+<!-- Updates the join relationship and contents of a portal displaying related records. -->
+<!-- Use when a global field used in the portal's filter calculation has been modified (e.g., with OnObjectExit script trigger after users commit a change in a field used in portal's filter calculation). -->
+<!-- In WebDirect: performs Refresh Window script step instead. -->
+<!-- If specified object is not a portal: performs Refresh Object script step instead. -->
+<!-- Not supported on Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/refresh-portal.html -->

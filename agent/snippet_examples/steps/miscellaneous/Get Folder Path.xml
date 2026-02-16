@@ -1,6 +1,23 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Get Folder Path">
-    <AllowFolderCreation state="False"/>
+    <AllowFolderCreation state="True"/>
+    <Repetition>
+      <Calculation><![CDATA[1]]></Calculation>
+    </Repetition>
+    <DialogTitle>
+      <Calculation><![CDATA[]]></Calculation>
+    </DialogTitle>
+    <DefaultLocation>
+      <Calculation><![CDATA[Get ( DocumentsPath )]]></Calculation>
+    </DefaultLocation>
+    <Name>$result</Name>
   </Step>
 </fmxmlsnippet>
+<!-- AllowFolderCreation state: "True" lets users create new folders while browsing. "False" does not. -->
+<!-- Required: Name (variable name; prefix with $ for local or $$ for global, see Set Variable). -->
+<!-- Optional: AllowFolderCreation, DialogTitle (custom name for folder selection dialog), DefaultLocation (path that dialog displays when it opens), Repetition (for repeating variables). -->
+<!-- Prompts the user to select a folder, then sets the variable to the fully qualified path of the selected folder. -->
+<!-- Windows format: /Drive:/<selected folder>/. macOS format: /DriveName/<selected folder>/. -->
+<!-- FileMaker Pro only; not supported on Go, WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/get-directory.html -->

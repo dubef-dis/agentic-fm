@@ -2,5 +2,18 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Execute FileMaker Data API">
     <SelectAll state="True"/>
+    <Calculation><![CDATA[$query]]></Calculation>
+    <Text/>
+    <Field>$response</Field>
   </Step>
 </fmxmlsnippet>
+<!-- SelectAll state: "True" replaces entire contents of the field or variable. "False" inserts at the insertion point (or appends for variables without container data). -->
+<!-- Target: Field element uses <Field table="" id="0" name=""/> for a field, or <Field>$variable</Field> for a variable. -->
+<!-- Required: Calculation (JSON object specifying the request; see FileMaker Data API Guide for format). -->
+<!-- Optional: SelectAll, Target (field or variable; if omitted, active field is used). If targeting a variable that does not exist, this step creates it. -->
+<!-- Request JSON keys: action (read|metaData|create|update|delete|duplicate), version (v1|v2|vLatest), layouts, tables, query, recordId, sort, offset, limit, layout.response, portal, offset.portal-name, limit.portal-name, fieldData, portalData, modId, options (entrymode, prohibitmode). -->
+<!-- Ignored keys: databases, Authorization, Content-Type, script keys (use Perform Script instead). -->
+<!-- Result in Target is JSON with messages.code and messages.message. Get(LastError), Get(LastErrorDetail), Get(LastErrorLocation) return the same values. -->
+<!-- Executes in its own session unrelated to any window or script context; script triggers and error dialogs are disabled during execution. -->
+<!-- Hosted files: container fields return URLs to fetch contents. Local files: only the filename is returned. -->
+<!-- See https://help.claris.com/en/pro-help/content/execute-filemaker-data-api.html -->

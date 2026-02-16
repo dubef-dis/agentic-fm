@@ -2,5 +2,17 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Execute SQL">
     <NoInteract state="True"/>
+    <Profile QueryType="Query" flags="0" password="" UserName="" dsn="" FieldDelimiter="&#9;" IsPredefined="-1" FieldNameRow="0" DataType="ODBC">
+      <Query>$sql_statement</Query>
+    </Profile>
   </Step>
 </fmxmlsnippet>
+<!-- NoInteract state: "True" suppresses the Specify SQL dialog, Select ODBC Data Source dialog, and password dialog. "False" shows the dialogs. -->
+<!-- Profile QueryType: "Query" | other values may exist for different query types. -->
+<!-- Profile dsn: ODBC data source name. Profile UserName and password: credentials. Select "Save user name and password" if NoInteract is "True". -->
+<!-- Query element: contains SQL statement (manually entered or calculated). Maximum 256 K characters (512 KB). -->
+<!-- Executes SQL statements on ODBC data sources (not FileMaker data sources; use ExecuteSQL function for FileMaker SELECT queries). -->
+<!-- Error handling: Get(LastError) returns FileMaker error; Get(LastErrorDetail) returns ODBC error state. -->
+<!-- ODBC driver must support Unicode for Unicode strings. For Microsoft SQL Server, prefix Unicode strings with "N" (e.g., N'text') to preserve non-English characters. -->
+<!-- Server-side scripts, WebDirect, Data API, and CWP require NoInteract to be "True". -->
+<!-- See https://help.claris.com/en/pro-help/content/execute-sql.html -->

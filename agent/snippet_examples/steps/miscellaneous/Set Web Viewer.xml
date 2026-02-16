@@ -1,6 +1,23 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Set Web Viewer">
-    <Action value="Reset"/>
+    <Action value="GoToURL"/>
+    <ObjectName>
+      <Calculation><![CDATA[$object]]></Calculation>
+    </ObjectName>
+    <URL custom="False">
+      <Calculation><![CDATA[$url]]></Calculation>
+    </URL>
   </Step>
 </fmxmlsnippet>
+<!-- Action enumeration: "GoToURL" loads new web address in web viewer; "Reset" resets web viewer to original web address and clears Back/Forward history; "Reload" reloads current webpage; "GoForward" goes forward one page (like web browser); "GoBack" goes back one page (like web browser). -->
+<!-- URL custom attribute: "False" uses predefined URL; "True" uses custom calculation. -->
+<!-- Required: ObjectName (name of web viewer to act upon), Action. -->
+<!-- Optional: URL (for GoToURL action; calculation specifying new web address). -->
+<!-- Works only for named web viewer objects. ObjectName can be typed or calculated. -->
+<!-- Cannot change web viewer settings via script (interaction, progress bar, status messages, Find mode display, automatic URL encoding); these settings only available in Layout mode. -->
+<!-- For GoToURL: can send HTML data to web viewer using data URL scheme format: data:[<mediatype>][;base64],<data> (see documentation for full syntax details). -->
+<!-- Supports UTF-16 character encoding only. Character data encoded using other methods will not display the URL target. -->
+<!-- In WebDirect: GoForward and GoBack options not supported. -->
+<!-- Not supported on Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/set-web-viewer.html -->

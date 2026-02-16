@@ -67,3 +67,26 @@
     <OAuthProvider type="OAuthProviderGoogle"/>
   </Step>
 </fmxmlsnippet>
+<!-- NoInteract state: "True" suppresses the composed email dialog (email is placed in outbox and sent when connected to network). "False" leaves composed message open for review in email application. -->
+<!-- MultipleEmails state: "True" sends one message for each record in found set to all specified recipients. "False" sends one message using data from current record to all specified recipients. -->
+<!-- SendViaSMTP state: "True" sends via SMTP server. "False" does not use SMTP. -->
+<!-- SendViaOAuthAuthentication state: "True" sends via OAuth 2.0. "False" does not use OAuth. -->
+<!-- To/Cc/Bcc UseFoundSet attribute: "True" collects addresses across found set (available for one email using field or calculation). "False" uses single value. -->
+<!-- SMTPEncryptionType enumeration: "SMTPEncryptionTLS" (TLS encryption), other encryption types. -->
+<!-- SMTPAuthenticationType enumeration: "SMTPAuthenticationPlain" (plain authentication), other authentication types. -->
+<!-- OAuthProvider enumeration: "OAuthProviderGoogle" (Google OAuth), other OAuth providers. -->
+<!-- Optional: To (recipient addresses), Cc (carbon copy addresses), Bcc (blind carbon copy addresses), Subject, Message, Attachment (file paths), SMTP options (SMTPServer, SMTPPort, SMTPUserName, SMTPPassword, SMTPNameDescription, SMTPEmailAddress, SMTPReplyAddress, SMTPEncryptionType, SMTPAuthenticationType), OAuth options (OAuthProvider, OAuthUserID, OAuthAccountEmail, OAuthPrivateKey, OAuthNameDescription, OAuthEmailAddress, OAuthReplyAddress). -->
+<!-- Sends email via email application, SMTP, or OAuth 2.0. -->
+<!-- Multiple email addresses in To/Cc/Bcc must be separated by carriage return or semicolon (some email clients don't accept other separators like comma). -->
+<!-- Attach Files attaches all files in list that can be found at specified paths (doesn't search and choose first file). -->
+<!-- Can create PDF or Excel files from data to send as attachments (use Save Records as PDF or Save Records as Excel first). -->
+<!-- Sends email as plain text. To edit message contents and formatting, use email client with NoInteract="False". -->
+<!-- FileMaker Pro verifies SSL certificate of SMTP server using encrypted connection. If verification fails: users can choose to connect or cancel; if Set Error Capture is On, behaves as if server unavailable; in server-side scripts, Data API, CWP, and WebDirect, behaves as if canceled by user. -->
+<!-- If MultipleEmails="True" with SMTP or OAuth and error occurs while emailing one record, remaining records will not be sent. -->
+<!-- Email application not supported in server-side scripts, Data API, or CWP. -->
+<!-- Server-side scripts support SMTP and OAuth, but attached files must be in folder accessible to server-side scripts. -->
+<!-- WebDirect: doesn't support Attach Files option; doesn't support NoInteract="False" when using email client; email via client limited to 2000 characters total for To/Cc/Bcc/Subject/Body (browser may not allow sending if exceeded). -->
+<!-- Go: doesn't support NoInteract="False" (email displays on device for manual sending). -->
+<!-- Data API and CWP: don't support Attach Files option. -->
+<!-- To send via email application: must have supported email application installed and configured; Windows requires [Mail] section in Win.ini file. -->
+<!-- See https://help.claris.com/en/pro-help/content/send-mail.html -->

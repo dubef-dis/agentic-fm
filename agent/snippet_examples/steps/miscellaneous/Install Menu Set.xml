@@ -2,6 +2,10 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Install Menu Set">
     <UseAsFileDefault state="False"/>
-    <CustomMenuSet id="0" name="[Standard FileMaker Menus]"/>
+    <CustomMenuSet id="0" name=""/>
   </Step>
 </fmxmlsnippet>
+<!-- UseAsFileDefault state: "True" overrides the file's default menu set (until the file is closed). "False" does not override the file default. -->
+<!-- Required: CustomMenuSet (menu set to install). -->
+<!-- FileMaker Pro and Go only; not supported on WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/install-menu-set.html -->

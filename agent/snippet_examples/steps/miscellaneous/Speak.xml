@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Speak">
-    <SpeechOptions WaitForCompletion="True" Voiceid="0"/>
+    <Calculation><![CDATA[]]></Calculation>
+    <SpeechOptions WaitForCompletion="False" VoiceName="" VoiceId="" VoiceCreator=""/>
   </Step>
 </fmxmlsnippet>
+<!-- SpeechOptions attributes: WaitForCompletion ("True" waits until speech completes before continuing to next script step; "False" continues immediately), VoiceName (specifies voice synthesizer name), VoiceId (voice identifier), VoiceCreator (voice creator identifier). -->
+<!-- Required: Calculation (text to be spoken; can be literal text or calculated text). -->
+<!-- Optional: SpeechOptions (voice selection and wait behavior). -->
+<!-- Produces speech from text using specified voice synthesizer. -->
+<!-- Can enter literal text string or use calculation to create text to be spoken. -->
+<!-- Can specify which voice synthesizer to use and whether to wait for speech completion. -->
+<!-- If database opened on non-speaking computer: script can be edited but only default voice synthesizer available; Speak steps not executed when script is run. -->
+<!-- macOS only. Not supported on Go, WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/speak-os-x.html -->

@@ -1,4 +1,14 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
-  <Step enable="True" id="0" name="Set Session Identifier"/>
+  <Step enable="True" id="0" name="Set Session Identifier">
+    <Calculation><![CDATA[]]></Calculation>
+  </Step>
 </fmxmlsnippet>
+<!-- Required: Calculation (session identifier as text or calculation whose result is text). -->
+<!-- Sets an identifier for the user's current session. By default, session identifier is same value as Get(UserName). -->
+<!-- For each FileMaker client connected to a given host, only one value for session identifier exists. Value remains until Set Session Identifier is performed again in any custom app on same host opened by same client in same session, or until session ends. -->
+<!-- Session identifier available to administrators via: FileMaker Server Admin Console (Databases page), Access log for FileMaker Server (shows changes), FileMaker Admin API (returns as userName value using List Clients call). -->
+<!-- Best practices: If each user has unique account, account name identifies them (may not need this step). If multiple users share account or use Guest account, use this to provide alternative identifier. Perform in start-up script (OnFirstWindowOpen trigger) to set at session start. Use same method across multiple apps on same host to avoid identifier changes. Update identifier in sign-out/sign-in scripts (e.g., with Re-Login step). -->
+<!-- Does not change value returned by Get(UserName) function. -->
+<!-- If current app is local file, this step does nothing. -->
+<!-- See https://help.claris.com/en/pro-help/content/set-session-identifier.html -->

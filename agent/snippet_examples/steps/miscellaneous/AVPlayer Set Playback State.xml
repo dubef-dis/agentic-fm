@@ -4,3 +4,5 @@
     <PlaybackState value="Stopped"/>
   </Step>
 </fmxmlsnippet>
+<!-- PlaybackState value: "Paused" | "Playing" | "Stopped" -->
+<!-- See https://help.claris.com/en/pro-help/content/avplayer-set-playback-state.html -->

@@ -4,3 +4,5 @@
     <Set state="False"/>
   </Step>
 </fmxmlsnippet>
+<!-- Set state: "True" (On) indicates that the formatting bar, the **View** menu > **Formatting.... "False" (Off) hides the formatting bar, disables the **View** menu > **Formatting.... -->
+<!-- See https://help.claris.com/en/pro-help/content/allow-formatting-bar.html -->

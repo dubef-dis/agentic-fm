@@ -1,4 +1,35 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
-  <Step enable="True" id="0" name="AVPlayer Set Options"/>
+  <Step enable="True" id="0" name="AVPlayer Set Options">
+    <Presentation value="Start Full Screen"/>
+    <PlaybackPosition>
+      <Calculation><![CDATA[0]]></Calculation>
+    </PlaybackPosition>
+    <StartOffset>
+      <Calculation><![CDATA[0]]></Calculation>
+    </StartOffset>
+    <EndOffset>
+      <Calculation><![CDATA[0]]></Calculation>
+    </EndOffset>
+    <Volume>
+      <Calculation><![CDATA[0]]></Calculation>
+    </Volume>
+    <HideControls value="False"/>
+    <DisableInteraction value="False"/>
+    <DisableExternalControls value="False"/>
+    <PauseInBackground value="False"/>
+    <Zoom value="Fit"/>
+    <Sequence value="None"/>
+  </Step>
 </fmxmlsnippet>
+<!-- Presentation value: "Start Full Screen" (starts full screen, allows switching to embedded) | "Full Screen Only" | "Start Embedded" (starts embedded, allows switching to full screen) | "Embedded Only" | "Audio Only" -->
+<!-- Zoom value: "Fit" (preserves aspect, scales to fit) | "Fill" (preserves aspect, scales to fill) | "Stretch" (stretches to fill, does not preserve aspect) | "Fit Only" | "Fill Only" | "Stretch Only" -->
+<!-- Sequence value: "None" (no additional media) | "Next" (plays next media) | "Previous" (plays previous media) -->
+<!-- HideControls value: "True" hides playback controls. "False" shows playback controls. If controls are hidden but interaction is enabled, gestures can be used. -->
+<!-- DisableInteraction value: "True" disables user interaction with playback (no controls or gestures). "False" enables user interaction. -->
+<!-- DisableExternalControls value: "True" disables iOS/iPadOS lock screen and Control Center playback controls. "False" enables them. -->
+<!-- PauseInBackground value: "True" pauses audio and video when FileMaker Go moves to background. "False" continues audio (video pauses). -->
+<!-- Optional: Presentation, HideControls, DisableInteraction, DisableExternalControls, PauseInBackground, PlaybackPosition (seconds from beginning), StartOffset (playback range start in seconds, default 0), EndOffset (playback range end in seconds, default 0 = play to end), Zoom, Volume (0.0 to 1.0), Sequence. -->
+<!-- Changes settings for a media file that is currently playing or paused. -->
+<!-- FileMaker Go only; not supported on Pro, WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/avplayer-set-options.html -->

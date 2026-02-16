@@ -1,7 +1,19 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Send Event">
-    <ContentType value="File"/>
-    <Event CopyResultToClipboard="False" WaitForCompletion="False" BringTargetToForeground="False"/>
+    <ContentType value="Text"/>
+    <Text></Text>
+    <Event CopyResultToClipboard="False" WaitForCompletion="True" BringTargetToForeground="True" TargetType="????" TargetName="&lt;unknown&gt;" id="dosc" class="misc"/>
   </Step>
 </fmxmlsnippet>
+<!-- ContentType enumeration: "Text" uses manual text entry; "Calculation" generates message from calculation. -->
+<!-- Event attributes: CopyResultToClipboard ("True" copies event result to clipboard; "False" does not; disabled if BringTargetToForeground is "True"; macOS only), WaitForCompletion ("True" waits for event to finish before continuing; "False" does not wait; macOS only), BringTargetToForeground ("True" activates and displays target application; "False" performs in background; can slow performance), TargetType (event type), TargetName (target application or document), id (event ID), class (event class). -->
+<!-- Windows events: open document/application (opens document or application), print document (prints document in another application). -->
+<!-- macOS events: open application (opens an application), open document (opens document in target application), do script (performs script in target application's language; can specify document or script text), other (manually enter Event class and Event ID). -->
+<!-- Required: Event (with id and class for event identification), ContentType. -->
+<!-- Optional: Text (for ContentType="Text"), Calculation (for ContentType="Calculation"), Document (file path). -->
+<!-- Each Send Event step sends one event. Can include multiple Send Event steps in a script. -->
+<!-- When specifying document or application by calculation or text, file type or application name appears as <unknown> in script definition. -->
+<!-- Windows: can create program in Basic or C and run with this step. macOS: sends text (not compiled) data; must know what target application expects. -->
+<!-- FileMaker Pro only. Not supported on Go, WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/send-event.html -->

@@ -2,5 +2,9 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Dial Phone">
     <NoInteract state="True"/>
+    <UseDialPreferences value="False"/>
+    <Calculation><![CDATA[]]></Calculation>
   </Step>
 </fmxmlsnippet>
+<!-- NoInteract state: "True" suppresses the associated dialog. "False" shows the dialog. -->
+<!-- See https://help.claris.com/en/pro-help/content/dial-phone.html -->

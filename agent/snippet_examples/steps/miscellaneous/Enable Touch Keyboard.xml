@@ -4,3 +4,8 @@
     <ShowHide value="Show"/>
   </Step>
 </fmxmlsnippet>
+<!-- ShowHide value: "Show" [On] (enables touch keyboard) | "Hide" [Off] (disables touch keyboard) | "Toggle" (switches between enabled and disabled) -->
+<!-- Used only for fields; has no impact on touch keyboard for dialog boxes. -->
+<!-- Use Get(TouchKeyboardState) to check the current setting. -->
+<!-- FileMaker Go and Windows only; not supported on Mac, WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/enable-touch-keyboard.html -->

@@ -2,6 +2,17 @@
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Open URL">
     <NoInteract state="True"/>
-    <Option state="False"/>
+    <Option state="True"/>
+    <Calculation><![CDATA[]]></Calculation>
   </Step>
 </fmxmlsnippet>
+<!-- NoInteract state: "True" suppresses the Open URL Options dialog. "False" shows the dialog. -->
+<!-- Option state: "True" opens URL in external browser (FileMaker Go only). "False" opens within FileMaker Go. -->
+<!-- Required: Calculation (URL text or calculated value). -->
+<!-- Supported URL schemes: http, https, ldap, ldaps, ftp, file, mailto, fmp, fmpXX (uses application registered with OS for each scheme). -->
+<!-- URL must be properly encoded; replace special characters with encoded values (e.g., @ becomes %40, space becomes %20). -->
+<!-- fmp and fmpXX URL format for opening FileMaker files is documented in "Opening FileMaker Pro files using a URL". -->
+<!-- In macOS: for file scheme with remote volumes, mount first then use file:///Volumes/MyVolumeName (not host name or IP). -->
+<!-- In WebDirect: file scheme is not supported. -->
+<!-- Not supported on Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/open-url.html -->

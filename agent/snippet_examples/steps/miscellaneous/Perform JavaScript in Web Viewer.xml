@@ -1,4 +1,25 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
-  <Step enable="True" id="0" name="Perform JavaScript in Web Viewer"/>
+  <Step enable="True" id="0" name="Perform JavaScript in Web Viewer">
+    <ObjectName>
+      <Calculation><![CDATA[$object]]></Calculation>
+    </ObjectName>
+    <FunctionName>
+      <Calculation><![CDATA[]]></Calculation>
+    </FunctionName>
+    <Parameters Count="1">
+      <P>
+        <Calculation><![CDATA[]]></Calculation>
+      </P>
+    </Parameters>
+  </Step>
 </fmxmlsnippet>
+<!-- Required: FunctionName (name of JavaScript function to perform; case sensitive). -->
+<!-- Optional: ObjectName (name of web viewer object; if omitted, uses active web viewer), Parameters (one or more text parameters passed to JavaScript function). -->
+<!-- Performs the JavaScript function and waits for it to finish. Any return value from the function is ignored. -->
+<!-- Users cannot cancel the operation or perform other actions while the JavaScript function is executing. -->
+<!-- Does not change which layout object has focus. Use Go to Object script step to change focus to the web viewer. -->
+<!-- If web viewer hasn't finished loading when this step executes, the JavaScript function is not performed and Get(LastError) returns an error. Web viewer may not be loaded if it's in a closed popover, not in frontmost panel control, or not in visible layout area. -->
+<!-- In WebDirect: only works if web viewer's webpage has same origin as FileMaker WebDirect webpage. User cannot click web viewer to give it focus, so must specify ObjectName or use Go to Object first; otherwise returns error. -->
+<!-- Not supported on Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/perform-javascript-in-web-viewer.html -->

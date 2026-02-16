@@ -1,4 +1,13 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
-  <Step enable="True" id="0" name="Install Plug-In File"/>
+  <Step enable="True" id="0" name="Install Plug-In File">
+    <Field table="" id="0" name=""/>
+  </Step>
 </fmxmlsnippet>
+<!-- Optional: Field (container field containing the plug-in). If omitted, uses the current container field in the active table. -->
+<!-- The plug-in must be inserted in a container field first. Only .fmx64 (Windows), .fmplugin (macOS), or .fmx (Linux) extensions are supported. ZIP and TAR compressed files cannot be installed. -->
+<!-- Use Get(InstalledFMPlugins) or Get(InstalledFMPluginsAsJSON) to check plug-in name, version, and enabled state. -->
+<!-- Plug-ins must be enabled in plug-in settings to be recognized. If an update is installed but the plug-in is disabled, the update installs but remains disabled. -->
+<!-- For hosted files, the server administrator must enable this step in Admin Console. -->
+<!-- Not supported in server-side scripts on FileMaker Cloud. Not supported on Go. -->
+<!-- See https://help.claris.com/en/pro-help/content/install-plug-in-file.html -->

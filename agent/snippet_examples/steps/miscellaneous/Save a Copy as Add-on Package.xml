@@ -1,6 +1,15 @@
 <?xml version="1.0"?>
 <fmxmlsnippet type="FMObjectList">
   <Step enable="True" id="0" name="Save a Copy as Add-on Package">
-    <LinkAvail state="False"/>
+    <LinkAvail state="True"/>
+    <Calculation><![CDATA[Get ( WindowName )]]></Calculation>
   </Step>
 </fmxmlsnippet>
+<!-- LinkAvail state: "True" generates new UUIDs for all elements in the file before saving (cannot be undone). "False" does not generate new UUIDs. -->
+<!-- Optional: Calculation (window name of open FileMaker Pro file to save; if omitted, uses file for current window). -->
+<!-- Creates an add-on package from an open FileMaker Pro file. -->
+<!-- Add-on is saved to: Windows: <drive>:\Users\<user>\AppData\Local\FileMaker\Extensions\AddonModules, macOS: /Users/<user>/Library/Application Support/FileMaker/Extensions/AddonModules -->
+<!-- Saves in two forms: (1) uncompressed folder (current FileMaker Pro loads from this and makes it available immediately), (2) compressed .fmaddon file (distributable; double-click to install). -->
+<!-- To prevent script from being included in add-on: prefix script name with __FMAddonTemplateDirectives_ (two underscores at start, one at end). -->
+<!-- FileMaker Pro only. Not supported on Go, WebDirect, Server, Cloud, Data API, or CWP. -->
+<!-- See https://help.claris.com/en/pro-help/content/save-a-copy-as-add-on-package.html -->
