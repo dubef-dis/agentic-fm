@@ -52,6 +52,16 @@ See **[filemaker/README.md](filemaker/README.md)** for the full dependency list 
 6. Paste fmxmlsnippet into FileMaker at the desired insertion point
 ```
 
+# Agent Skills
+
+Skills are opt-in workflows that extend the AI's default behavior. Invoke them naturally in conversation — no special syntax required.
+
+| Skill | What it does | Example triggers |
+| --- | --- | --- |
+| **script-preview** | Generates a human-readable, numbered step outline of a proposed script for review and iteration before any XML is generated. Loops until you approve, then hands off to full generation. | "preview the script", "outline the steps", "draft the logic before you generate" |
+| **script-review** | Performs a code review of an existing script — evaluating logic flow, efficiency, and correctness. Interactive; works alongside the FileMaker debugger. | "review this script", "check the logic in X script" |
+| **library-lookup** | Searches the curated snippet library for reusable fmxmlsnippet code matching the current task. Used proactively by AI before writing significant logic, and on direct request. | "use the HTTP request script", "add a timeout loop", "is there a library item for this?" |
+
 # Objectives
 
 The goals of this project are to provide the guidance and context needed by agentic processes for creating reliable scripts and other FileMaker related code that can be taken from AI back into FileMaker Pro.
