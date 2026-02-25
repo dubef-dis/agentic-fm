@@ -19,7 +19,7 @@ jobs:
           EVENT="${{ github.event_name }}"
 
           if [ "$EVENT" = "push" ]; then
-            CONTENT="🚀 **Push** to ${{ github.repository }}\nBranch: ${{ github.ref_name }}\nBy: ${{ github.actor }}\nMessage: ${{ github.event.head_commit.message }}"
+            CONTENT="🚀 **Push** to ${{ github.repository }}\nBranch: ${{ github.ref_name }} - By: ${{ github.actor }}\nMessage: ${{ github.event.head_commit.message }}\nCommit: ${{ github.event.head_commit.url }}"
           fi
 
           if [ "$EVENT" = "issues" ]; then
